@@ -1,16 +1,18 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {OneProduct} from '../../components'
-import {remove} from '../../store/products';
+import {remove, toggleSelect, count} from '../../store/products';
 
 const ProductList = (props) => {
 
     const products = useSelector(state => state.products.products)
     const dispatch = useDispatch()
 
-    const removeHandler = (id) => {
-        dispatch(remove(id))
+    const productActionHandler = (id) => {
+        dispatch(toggleSelect(id))
+        dispatch(count(id))
     }
+
     return (
         <div className='products'>
             {products.map(prod => <OneProduct
@@ -19,7 +21,9 @@ const ProductList = (props) => {
                 name={prod.name}
                 img={prod.img}
                 price={prod.price}
-                onRemove={() => removeHandler(prod.id)}
+                selected={prod.selected}
+                onRemove={() => dispatch(remove(prod.id))}
+                onProductAction={() => productActionHandler(prod.id)}
             />)}
         </div>
     )
