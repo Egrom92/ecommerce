@@ -5,8 +5,8 @@ import {Cart, Form, ProductList} from '../../components';
 const HomePage = (props) => {
     return (
         <>
-            <Cart/>
             <Form/>
+            <Cart/>
             <ProductList/>
         </>
     )
