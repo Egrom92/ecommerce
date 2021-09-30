@@ -1,0 +1,24 @@
+.one-product {
+    max-width: 270px;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    background-color: #e5e5e5;
+}
+.remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.price {
+    margin-bottom: 10px;
+}

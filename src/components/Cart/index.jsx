@@ -1,5 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux';
+import './Cart.css'
 
 const Cart = (props) => {
 
@@ -7,7 +8,7 @@ const Cart = (props) => {
 
     return (
         <>
-            <h1>{cart}</h1>
+            <h2 className='cart'>Products in cart: {cart}</h2>
         </>
     )
 }

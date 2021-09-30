@@ -1,0 +1,12 @@
+.form-wrapper {
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin-bottom: 10px;
+}

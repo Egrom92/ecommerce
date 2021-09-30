@@ -12,7 +12,7 @@ const Form = (props) => {
     const [name, setName] = useState('')
     const [price, setPrice] = useState(0)
 
-    const onAdd = useCallback((e)=> {
+    const onAdd = useCallback((e) => {
 
         dispatch(add({img, name, price}))
 
@@ -22,15 +22,15 @@ const Form = (props) => {
     }, [img, name, price, dispatch])
 
     return (
-        <>
+        <div className='form-wrapper'>
             <h2>Add product form</h2>
-
+            <div className='form'>
                 <input onChange={(e) => setImg(e.target.value)} value={img} type="url" placeholder='Product image'/>
                 <input onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder='Product name'/>
                 <input onChange={(e) => setPrice(e.target.value)} value={price} type="number" placeholder='Product price'/>
                 <button onClick={() => onAdd()}>Submit</button>
-
-        </>
+            </div>
+        </div>
     )
 }
 

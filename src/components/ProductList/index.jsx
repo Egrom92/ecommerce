@@ -2,11 +2,17 @@ import React from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {OneProduct} from '../../components'
 import {remove, toggleSelect, count} from '../../store/products';
+import './ProductList.css'
 
 const ProductList = (props) => {
 
     const products = useSelector(state => state.products.products)
     const dispatch = useDispatch()
+
+    const productRemoveHandler = (id) => {
+        dispatch(remove(id))
+        dispatch(count(id))
+    }
 
     const productActionHandler = (id) => {
         dispatch(toggleSelect(id))
@@ -22,7 +28,7 @@ const ProductList = (props) => {
                 img={prod.img}
                 price={prod.price}
                 selected={prod.selected}
-                onRemove={() => dispatch(remove(prod.id))}
+                onRemove={() => productRemoveHandler(prod.id)}
                 onProductAction={() => productActionHandler(prod.id)}
             />)}
         </div>
